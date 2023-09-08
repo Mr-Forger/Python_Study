@@ -4,9 +4,19 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
+#TODO-1: encrypt 함수를 만들고 파라미터로는 text, shift를 가집니다.
 
-    #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
+def encrypt(textInput, shiftAmount):
+    cipherText = "" 
+    for letter in textInput:
+        pos = alphabet.index(letter)
+        shiftPos = pos + shiftAmount
+        newLetter = alphabet[shiftPos]
+        cipherText += newLetter
+    print(f"The encoded text is {cipherText}")
+
+
+    #TODO-2: encrypt 함수에는, shift 시 text로 받은 문자들이 앞으로 이동 후 암호화 된 text를 출력합니다.  
     #e.g. 
     #plain_text = "hello"
     #shift = 5
@@ -18,4 +28,5 @@ shift = int(input("Type the shift number:\n"))
 
     ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
 
-#TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
+#TODO-3: encrypt 함수를 호출하고 출력하세요! 
+encrypt(textInput=text, shiftAmount=shift)
