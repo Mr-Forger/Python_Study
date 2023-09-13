@@ -1,4 +1,4 @@
-#윤년 구하기 개선판
+#윤년 구하기 with Function
 #TODO1 - 윤년이 맞는 경우 TRUE를 반환하거나, 윤년이 아닌 경우 FALSE 반환
 def is_leap(year):
   if year % 4 == 0:
