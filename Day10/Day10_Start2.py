@@ -15,7 +15,7 @@ print(format_name(input("What is your first name? "), input("What is your last n
 #Already used functions with outputs.
 length = len(formatted_name)
 
-#Return as an early exit
+#빨리 함수에서 벗어나기
 def format_name(f_name, l_name):
   """Take a first and last name and format it 
   to return the title case version of the name."""
