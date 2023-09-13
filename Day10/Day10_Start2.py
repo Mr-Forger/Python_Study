@@ -1,4 +1,4 @@
-#Functions with Outputs
+#출력을 가지는 함수
 def format_name(f_name, l_name):
   if f_name == "" or l_name == "":
     return "You didn't provide valid inputs."
@@ -6,7 +6,7 @@ def format_name(f_name, l_name):
   formated_l_name = l_name.title()
   f"Result: {formated_f_name} {formated_l_name}"
 
-#Storing output in a variable
+#함수를 변수에다가 저장 후 출력시키기
 formatted_name = format_name(input("Your first name: "), input("Your last name: "))
 print(formatted_name)
 #or printing output directly
