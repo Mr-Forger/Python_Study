@@ -29,4 +29,6 @@ choose_op = input("choose operation: ")
 calculate = operators[choose_op]
 print(f"{num1} {choose_op} {num2} = {calculate}.")
 
+#calculate 값을 받아서 다시 연산하는 코드를 작성하세요.
+
                 
