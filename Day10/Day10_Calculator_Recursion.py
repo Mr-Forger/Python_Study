@@ -2,6 +2,10 @@
 from art import logo
 print(logo)
 
+import os
+def clear():
+    os.system('cls')
+
 #1. 연산자 함수들 생성
 def add(x, y):
     return x+y
@@ -22,6 +26,7 @@ operators = {
     "/" : divide
 }
 
+
 #재귀 함수를 이용하기
 def calculator():
     num1 = int(input("What's the first number?: ")) #파라미터 x에 대응
@@ -40,6 +45,9 @@ def calculator():
         elif ask == "no":
             flag = False
             calculator()
+            clear()
+
+calculator()
 
 
 
