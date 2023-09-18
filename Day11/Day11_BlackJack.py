@@ -5,6 +5,7 @@ print(logo)
 import os
 def clear():
     os.system('cls')
+    
 #셔플
 def shuffle():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10] #카드 덱 생성
