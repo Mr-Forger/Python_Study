@@ -29,7 +29,7 @@ while flag:
     bid_continue = input("다른 입찰자가 있으면 yes, 없으면 no를 입력해주세요: ")
 
     if bid_continue == "yes":
-        clear()
+        clear() #화면 없애고 다음 사람 입찰받기.
     else:
         flag = False
         highest_bidder(bidder)
