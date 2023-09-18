@@ -6,6 +6,7 @@ def clear():
     os.system('cls')
 
 #딕셔너리를 활용 해 익명 경매 프로그램을 만드세요.
+<<<<<<< HEAD
 bidder = {} #이름(키) : 입찰가(값)으로 이루어진 딕셔너리 만들기.
 flag = True
 
@@ -33,3 +34,5 @@ while flag:
     else:
         flag = False
         highest_bidder(bidder)
+=======
+>>>>>>> origin/main
