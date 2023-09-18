@@ -63,7 +63,6 @@ def play():
             ask_hit = input("Are you want hit? or finish. if you want hit press 'h' or finish press 'n'")
             if ask_hit == "h":
                 player_cards.append(shuffle())
-                flag = False
             else:
                 flag = False #반복문 종료
 
