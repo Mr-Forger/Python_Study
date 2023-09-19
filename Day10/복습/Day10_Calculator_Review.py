@@ -43,7 +43,7 @@ def calculator():
             clear()
             calculator()
 
-calculator()
+calculator() #최초 연산 실행
 
 
 
