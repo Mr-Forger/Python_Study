@@ -4,14 +4,18 @@ from art import logo
 print(logo)
 
 import os
+
+
 def clear():
     os.system('cls')
+
 
 # 셔플
 def shuffle():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10]  # 카드 덱 생성
     shuffle_card = random.choice(cards)  # 셔플한 카드에서 랜덤으로 하나 뽑는다.
     return shuffle_card  # 하나 뽑고 함수 종료
+
 
 # 점수 계산
 def score(final_cards):
@@ -22,6 +26,7 @@ def score(final_cards):
         final_cards.remove(11)
         final_cards.append(1)
     return sum(final_cards)
+
 
 # 결과 여부
 def versus(player_score, dealer_score):
@@ -38,6 +43,7 @@ def versus(player_score, dealer_score):
         return "You Win."
     else:  # player_score < dealer_score 인 경우
         return "You Lose"
+
 
 # 블랙잭 플레이
 def play():
@@ -72,6 +78,7 @@ def play():
     print(f"Final Player's Cards and Scores are {player_cards}, {player_score}")
     print(f"Final Dealer's Cards and Socres are {dealer_cards}, {dealer_score}")
     print(versus(player_score, dealer_score))
+
 
 while input("If you play Blackjack again press 'y' or finish press 'n'") == "y":
     clear()
