@@ -6,7 +6,7 @@ HARD_LEVEL_TURNS = 5
 
 
 # Function to check user's guess against actual answer.
-def check_answer(guess, answer, turns):
+def check_answer(guess, answer, turns): #모듈1: 답을 체크하는 함수
     """checks answer against guess. Returns the number of turns remaining."""
     if guess > answer:
         print("Too high.")
@@ -19,7 +19,7 @@ def check_answer(guess, answer, turns):
 
 
 # Make function to set difficulty.
-def set_difficulty():
+def set_difficulty(): #모듈2: 난이도를 설정하는 함수
     level = input("Choose a difficulty. Type 'easy' or 'hard': ")
     if level == "easy":
         return EASY_LEVEL_TURNS
@@ -27,7 +27,7 @@ def set_difficulty():
         return HARD_LEVEL_TURNS
 
 
-def game():
+def game(): #모듈3: 게임을 실행하는 함수
     print(logo)
     # Choosing a random number between 1 and 100.
     print("Welcome to the Number Guessing Game!")
