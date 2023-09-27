@@ -17,7 +17,7 @@ travel_log = [
 def addNewCountry(countryVisited, timesVisited, citiesVisited):
     newCoutnry = {}
     newCoutnry["country"] = countryVisited
-    newCoutnry["vistis"] = timesVisited
+    newCoutnry["visits"] = timesVisited
     newCoutnry["cities"] = citiesVisited
     travel_log.append(newCoutnry) #리스트에 추가
 
