@@ -22,7 +22,7 @@ class Menu:
     def get_items(self):
         """Returns all the names of the available menu items"""
         options = ""
-        for item in self.menu:s
+        for item in self.menu:
             options += f"{item.name}/"
         return options
 
