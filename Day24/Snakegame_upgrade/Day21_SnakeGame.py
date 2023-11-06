@@ -37,14 +37,14 @@ while flag:
     
     #벽에 충돌 했을 경우 게임이 끝나게 하기
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        flag = False
-        scoreboard.game_over()
+        scoreboard.reset()
+        snake.reset()
 
     #머리가 자기의 꼬리에 부딫혔을때 게임이 끝나게 하기
     for segment in snake.segments[1:]: #슬라이싱을 통해 머리부분인 인덱스0번 부터가 아닌 1번 인덱스부터 for문이 돌도록 설정.
         if snake.head.distance(segment) < 10:
-            flag = False
-            scoreboard.game_over()
+            scoreboard.reset()
+            snake.reset()
 
 
 
