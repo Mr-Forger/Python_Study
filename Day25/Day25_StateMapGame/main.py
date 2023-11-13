@@ -11,9 +11,16 @@ data = pandas.read_csv("50_states.csv")
 all_states = data.state.to_list()
 print(all_states)
 guess_state = []
+
 while len(guess_state) < 50:
     answer_state = screen.textinput(title=f"Your State Correct: {len(guess_state)}/50", prompt="Enter the State Name!").title()
     print(answer_state)
+
+    if answer_state == "Exit":
+        missing_state = [state for state in all_states if state not in guess_state]
+        new_data = pandas.DataFrame(missing_state)
+        new_data.to_csv("states_to_learn.csv")
+        break
 
     # 1. 입력한 주가 csv 파일에 있는 주인지 확인하기, 맞으면 해당 x, y좌표에 맞게 텍스트를 위치시켜야한다.
     if answer_state in all_states:
