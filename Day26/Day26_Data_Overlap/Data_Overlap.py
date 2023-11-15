@@ -1,21 +1,17 @@
-# # 내 풀이
-# with open("file1.txt") as data:
-#     numbers = data.readlines()
-#     data1 = [int(n.strip()) for n in numbers]
-#
-# with open("file2.txt") as data:
-#     numbers = data.readlines()
-#     data2 = [int(n.strip()) for n in numbers]
-#
-# result = [n for n in data1 if n in data2]
-# print(result)
+with open("file1.txt") as file:
+    num = file.readlines()
 
-# 솔루션
-with open("file1.txt") as data:
-    data1 = data.readlines()
+print(num)
 
-with open("file2.txt") as data:
-    data2 = data.readlines()
+with open("file2.txt") as file:
+    num2 = file.readlines()
 
-result = [int(n) for n in data1 if n in data2]
+print(num2)
+
+result = [int(n) for n in num if n in num2]
 print(result)
+
+result.sort()
+print(result)
+
+
