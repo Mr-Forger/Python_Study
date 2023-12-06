@@ -1,3 +1,4 @@
+import json
 from tkinter import *
 from tkinter import messagebox
 import random
@@ -32,18 +33,27 @@ def save():
     website = website_et.get()
     email_username = email_username_et.get()
     password = password_et.get()
+    new_data = {
+        website: {
+            "email": email_username,
+            "password": password,
+        }
+    }
 
     if len(website) == 0 or len(password) == 0:
         messagebox.showinfo(title="Oh no!", message="빈칸을 모두 채워주세요!")
     else:
-        is_ok = messagebox.askokcancel(title=website,
-                                       message=f"다음과 같이 저장하시겠습니까?: \nEmail:{email_username} \nPassword: {password} \n진짜 저장하실꺼죠? ")
+        with open("data.json", "r") as data_file:
+            # 기존 데이터를 읽는다.
+            data = json.load(data_file) # json.load: 이 함수는 json 파일을 파이썬 딕셔너리로 변환해준다.
+            # 예전 데이터를 새로운 데이터로 업데이트 한다.
+            data.update(new_data) # load에서 변환된 딕셔너리를 새로운 데이터로 업데이트한다.
 
-        if is_ok:
-            with open("data.txt", "a") as data_file:
-                data_file.write(f"{website} | {email_username} | {password}\n")
-                website_et.delete(0, END)
-                password_et.delete(0, END)
+        with open("data.json", "w") as data_file:
+            #업데이트 된 데이터를 저장한다.
+            json.dump(data, data_file, indent=4) # json.dump: 이 함수는 설정해놓은 양식대로 json 파일을 작성해준다. / indent: JSON 데이터에 들여쓰기 할 공백을 제공해서 읽기 쉽게 해준다.
+            website_et.delete(0, END)
+            password_et.delete(0, END)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
